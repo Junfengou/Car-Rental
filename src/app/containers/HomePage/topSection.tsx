@@ -16,8 +16,10 @@ function TopSection() {
                     at the best price for you and get the best quality cars for as long as
                     you like
                 </Description>
-                <Button text="Rent Your Ride" />
-                <Button text="Sell Your Ride" theme="filled" />
+                <ButtonsContainer>
+                  <Button text="Rent Your Ride" />
+                  <Button text="Sell Your Ride" theme="filled" />
+                </ButtonsContainer>
             </LeftContainer>
 
             <RightContainer>
