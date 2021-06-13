@@ -8,6 +8,7 @@ import { Marginer } from "../../components/marginer/index"
 import BookingSteps from "./bookingSteps"
 import AboutUs from "./aboutUs"
 import TopCars from "./topCars"
+import Footer from "../../components/footer/index"
 
 function HomePage() {
     return (
@@ -26,6 +27,7 @@ function HomePage() {
             <Marginer direction="vertical" margin="8em" />
 
             <TopCars />
+            <Footer />
         </PageContainer>
     )
 }

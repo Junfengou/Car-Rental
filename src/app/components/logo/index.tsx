@@ -2,12 +2,20 @@ import React from 'react'
 import CarLogoImg from "../../../assets/images/car-logo.png"
 import styled from "styled-components"
 import tw from "twin.macro"
+import CarLogoDarkImg from "../../../assets/images/car-logo-dark.png";
 
-function Logo() {
+interface ILogoProps {
+    color?: "white" | "dark";
+    bgColor?: "white" | "dark";
+}
+
+function Logo(props: ILogoProps) {
+    const { color, bgColor } = props;
+    
     return (
         <LogoContainer>
             <Image>
-                <img src={CarLogoImg} alt="car" />
+                <img src={bgColor === "dark" ? CarLogoDarkImg : CarLogoImg} />
             </Image>
 
             <LogoText>YourCar</LogoText>
