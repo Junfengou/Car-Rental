@@ -1,4 +1,5 @@
 export interface ICar {
+    // carId: string;
     thumbnailSrc: string;
     name: string;
     mileage: string;

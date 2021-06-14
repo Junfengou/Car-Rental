@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from "styled-components";
 import tw from "twin.macro"
 import { ICar } from '../../../typings/car';
@@ -7,6 +7,7 @@ import { useMediaQuery } from "react-responsive"
 import { SCREENS } from '../../components/responsive';
 import Carousel, { Dots, slidesToShowPlugin } from "@brainhubeu/react-carousel"
 import "@brainhubeu/react-carousel/lib/style.css";
+import carService from '../../services/carService';
 
 
 const testCar: ICar = {
@@ -44,6 +45,17 @@ function TopCars() {
     const [current, setCurrent] = useState(0);
     const isMobile = useMediaQuery({ maxWidth: SCREENS.sm })
     const numberOfDots = isMobile ? cars.length : Math.ceil(cars.length / 3);
+
+    const fetchTopCars = async () => {
+        const cars = await carService.getCars().catch(err => console.error(err)
+        )
+
+        console.log("cars: ", cars);
+    }
+
+    useEffect(() => {
+        fetchTopCars();
+    }, [])
 
     return (
         <TopCarsContainer>
